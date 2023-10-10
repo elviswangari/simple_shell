@@ -33,3 +33,17 @@ gcc -Wall -Wextra -Werror -pedantic <filename>.c -o <output>
 
 6. [fork](./refresher/6_fork.c) => we create a new process from the parent using `fork`
 7. [fork return value](./refresher/7_fork.c) => from the return value of `fork` we can get which process is being called at the moment
+8. [wait](./refresher/8_wait.c) => the wait function allows us to wait for a child process to finish so that the parent can sync or perform other opperations
+
+### Exercise
+
+#### 1. fork + wait + execve
+
+Write a program that executes the command ls -l /tmp in 5 different child processes. Each child should be created by the same process (the father). Wait for a child to exit before creating a new child.
+
+9. [fork wait exec](./refresher/9_forwaitexec.c) => a quick exercise for creating 5 processes making sure that the parent waits for one child to finish execution before creating another child
+
+#### 2. super simple shell
+
+Using everything we saw, write a first version of a super simple shell that can run commands with their full path, without any argument.
+10. [fork wait exec](./refresher/10_supersimpleshell.c) => creating a super simple shell that lists files
