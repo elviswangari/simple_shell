@@ -1,3 +1,4 @@
+
 # Simple Shell version 2
 
 We are going to cover how to implement a  simple shell in c programming language
@@ -7,6 +8,12 @@ before getting started well look at some few things
 ## refresher
 
 [refresher](./refresher) => in this directory we create files containing what we will require for the shell project
+
+compiling the c file(change filename and output to your desired ones)
+
+```
+gcc -Wall -Wextra -Werror -pedantic <filename>.c -o <output>
+```
 
 1. [pid](./refresher/1_pid.c) =>  checks for both child and  parent pid using the `getpid` and `getppid` functions respectivly. The parent pid should be same each time you run the program but the child process changes each time
 

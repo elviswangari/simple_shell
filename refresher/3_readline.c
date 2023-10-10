@@ -9,7 +9,7 @@ int main(void)
 	char *line = NULL;
 	size_t len = 0;
 	size_t read;
-	
+
 	printf("$ ");
 	read = getline(&line, &len, stdin);
 
