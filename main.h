@@ -3,4 +3,5 @@
 
 #include <stdio.h>
 
+int test_betty(void);
 #endif /*MAIN_H*/

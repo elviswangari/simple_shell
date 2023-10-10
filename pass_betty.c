@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * main - where the test function  starts
+ * test_betty - where the test function  starts
  * Return: zero on success
  */
 
-int main(void)
+int test_betty(void)
 {
 	printf("test if betty passes");
 
