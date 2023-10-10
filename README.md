@@ -46,6 +46,7 @@ Write a program that executes the command ls -l /tmp in 5 different child proces
 #### 2. super simple shell
 
 Using everything we saw, write a first version of a super simple shell that can run commands with their full path, without any argument.
+
 10. [fork wait exec](./refresher/10_supersimpleshell.c) => creating a super simple shell that lists files
 
 ### File information
