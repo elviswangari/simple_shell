@@ -28,11 +28,11 @@ int main(void)
 	// printf("%s", line);
 	/* split line */
 	token = strtok(line, " \t\n");
-	while (token != NULL)
-	{
-		// printf("%s\n", token);
-		token = strtok(NULL, " \t\n");
-	}
+	// while (token != NULL)
+	// {
+	// 	// printf("%s\n", token);
+	// 	token = strtok(NULL, " \t\n");
+	// }
 	/* fork */
 	child_pid = fork();
 	if (child_pid == -1)
