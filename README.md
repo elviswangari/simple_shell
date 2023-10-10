@@ -47,3 +47,9 @@ Write a program that executes the command ls -l /tmp in 5 different child proces
 
 Using everything we saw, write a first version of a super simple shell that can run commands with their full path, without any argument.
 10. [fork wait exec](./refresher/10_supersimpleshell.c) => creating a super simple shell that lists files
+
+### File information
+
+11. [stat](./refresher/11_stat.c) => using stat function in c to get information about an object or a file (which)
+
+3. implement which
