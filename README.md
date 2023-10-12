@@ -69,4 +69,18 @@ to access the environment within a process we can can use the 3 prototypes of ma
     a) int main(void);
     b) int main(int ac, char **av);
     c) int main(int ac, char **av, char **env); -> where env is a null terminated array of string and it accualy represent the environment
-13. [printenv](./refresher/13_printenv.c) => using the third main prototype to print out the environments
+13. [printenv](./refresher/13_printenv.c) => using the third main prototype to print out the environment
+
+### Exercises
+
+#### printenv with environ
+
+Write a program that prints the environment using the global variable environ.
+
+14. [environ](./refresher/14_environ.c) => environ is a global valiable that is usually define as an external variable which prints out each present environment
+
+#### env vs environ
+
+Write a program that prints the address of env (the third parameter of the main function) and environ (the global variable).
+
+15. [env vs environ](./refresher/15_env&&environ.c) => from the output of the above file it means they are one and the same thing as the addresses are the same
