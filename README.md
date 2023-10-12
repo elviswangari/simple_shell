@@ -55,4 +55,18 @@ Using everything we saw, write a first version of a super simple shell that can 
 #### 3. implement which
 
 12. [which](./refresher/12_which.c) => simple implementation of (which) which gives info about a certain file using the stat function
-13.
+
+### Environment
+
+Each process comes with an environment and we can use `printenv` to show all the environment variables available
+
+we know that when a process is created the child process inherits a copy of the parents environment
+
+to access the environment within a process we can can use the 3 prototypes of main
+
+#### main
+
+    a) int main(void);
+    b) int main(int ac, char **av);
+    c) int main(int ac, char **av, char **env); -> where env is a null terminated array of string and it accualy represent the environment
+13. [printenv](./refresher/13_printenv.c) => using the third main prototype to print out the environments
