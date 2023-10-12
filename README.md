@@ -52,4 +52,7 @@ Using everything we saw, write a first version of a super simple shell that can 
 
 11. [stat](./refresher/11_stat.c) => using stat function in c to get information about an object or a file (which)
 
-3. implement which
+#### 3. implement which
+
+12. [which](./refresher/12_which.c) => simple implementation of (which) which gives info about a certain file using the stat function
+13.
