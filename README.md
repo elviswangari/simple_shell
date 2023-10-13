@@ -84,3 +84,27 @@ Write a program that prints the environment using the global variable environ.
 Write a program that prints the address of env (the third parameter of the main function) and environ (the global variable).
 
 15. [env vs environ](./refresher/15_env&&environ.c) => from the output of the above file it means they are one and the same thing as the addresses are the same
+
+#### getenv()
+
+Write a function that gets an environment variable. (without using getenv)
+
+Prototype: `char *_getenv(const char *name);`
+
+##### what is getenv
+
+getenv is a function that retreaves the values of environment variables which takes in a pointer as an argument and returns the value if found returns null
+
+16. [getenv](./refresher/16_getenv.c) => a custom getenv function
+
+#### a fuction to print out the paths of environments
+
+Write a function that prints each directory contained in the the environment variable PATH, one directory per line.
+
+17. [path](./refresher/17_path.c) => prints out the path of each environ
+
+#### a function to create a linked list of the paths
+
+Write a function that builds a linked list of the PATH directories.
+
+18. [linked list paths](./refresher/18_linkedpaths.c) => creates linked lists of the paths
