@@ -107,4 +107,4 @@ Write a function that prints each directory contained in the the environment var
 
 Write a function that builds a linked list of the PATH directories.
 
-18. [linked list paths](./refresher/18_linkedpaths.c) => creates linked lists of the paths
+18. [linked list paths](./refresher/18_likedpaths.c) => creates linked lists of the paths
