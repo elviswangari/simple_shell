@@ -53,4 +53,59 @@ Using everything we saw, write a first version of a super simple shell that can 
 
 11. [stat](./refresher/11_stat.c) => using stat function in c to get information about an object or a file (which)
 
-3. implement which
+#### 3. implement which
+
+12. [which](./refresher/12_which.c) => simple implementation of (which) which gives info about a certain file using the stat function
+
+### Environment
+
+Each process comes with an environment and we can use `printenv` to show all the environment variables available
+
+we know that when a process is created the child process inherits a copy of the parents environment
+
+to access the environment within a process we can can use the 3 prototypes of main
+
+#### main
+
+    a) int main(void);
+    b) int main(int ac, char **av);
+    c) int main(int ac, char **av, char **env); -> where env is a null terminated array of string and it accualy represent the environment
+13. [printenv](./refresher/13_printenv.c) => using the third main prototype to print out the environment
+
+### Exercises
+
+#### printenv with environ
+
+Write a program that prints the environment using the global variable environ.
+
+14. [environ](./refresher/14_environ.c) => environ is a global valiable that is usually define as an external variable which prints out each present environment
+
+#### env vs environ
+
+Write a program that prints the address of env (the third parameter of the main function) and environ (the global variable).
+
+15. [env vs environ](./refresher/15_env&&environ.c) => from the output of the above file it means they are one and the same thing as the addresses are the same
+
+#### getenv()
+
+Write a function that gets an environment variable. (without using getenv)
+
+Prototype: `char *_getenv(const char *name);`
+
+##### what is getenv
+
+getenv is a function that retreaves the values of environment variables which takes in a pointer as an argument and returns the value if found returns null
+
+16. [getenv](./refresher/16_getenv.c) => a custom getenv function
+
+#### a fuction to print out the paths of environments
+
+Write a function that prints each directory contained in the the environment variable PATH, one directory per line.
+
+17. [path](./refresher/17_path.c) => prints out the path of each environ
+
+#### a function to create a linked list of the paths
+
+Write a function that builds a linked list of the PATH directories.
+
+18. [linked list paths](./refresher/18_linkedpaths.c) => creates linked lists of the paths
