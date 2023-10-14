@@ -8,7 +8,8 @@ void display_prompt(void)
 
 	if (cwd != NULL)
 	{
-		printf("#cisfun:%s$ ", cwd);
+		/* printf("#cisfun:%s$ ", cwd); */
+		printf("#cisfun$ ")
 		free(cwd);
 	}
 	else
