@@ -109,3 +109,25 @@ Write a function that prints each directory contained in the the environment var
 Write a function that builds a linked list of the PATH directories.
 
 18. [linked list paths](./refresher/18_linkedpaths.c) => creates linked lists of the paths
+
+### setenv
+
+setenv inv is a function used to add or overwrite an existing environment variable which takes in 3 args the name of the environment variable, the value to be set and the intager to determine if to overwrite
+
+#### creating our own setenv
+
+Write a function that changes or adds an environment variable (without using setenv).
+
+Prototype: `int _setenv(const char *name, const char *value, int overwrite);`
+
+19. [setenv](./refresher/19_setenv.c) => recreation of setenv
+
+### unsetenv
+
+unsetenv is a function used to remove an environment valiable which only takes in the environment variable as an argument and returns 0 on success or -1 on failure
+
+Write a function that deletes the variable name from the environment (without using unsetenv).
+
+Prototype: `int _unsetenv(const char *name);`
+
+20. [unsetenv](./refresher/20_unsetenv.c) => recreation of unsetenv
