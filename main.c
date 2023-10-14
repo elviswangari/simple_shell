@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-
+#include "main.h"
 /**
  * main - program starts here
  * Return: zero always
@@ -19,23 +13,16 @@ int main(void)
 
 	while (1)
 	{
-		/*read line*/
-		printf("#cisfun$ ");
+		write(STDOUT_FILENO, "#cisfun$ ", 9);
 		read_buff = getline(&line, &len, stdin);
 
-		if (read_buff <= 0)
+		if (read_buff == -1 || read_buff <= 0)
 		{
-			return (-1);
+			free(line);
+			exit(-1);
 		}
-		// printf("%s", line);
-		/* split line */
+
 		token = strtok(line, " \t\n");
-		// while (token != NULL)
-		// {
-		// 	// printf("%s\n", token);
-		// 	token = strtok(NULL, " \t\n");
-		// }
-		/* fork */
 		child_pid = fork();
 		if (child_pid == -1)
 		{
@@ -46,7 +33,7 @@ int main(void)
 		{
 			/* execute */
 			char *args[] = {token, NULL};
-			// printf("Child process: PID=%d\n", getpid());
+
 			execve(args[0], args, NULL);
 
 			perror("execve");
@@ -54,12 +41,10 @@ int main(void)
 		}
 		else
 		{
-			/* execute */
-			// printf("Parent process: PID=%d, Child PID=%d\n", getpid(), child_pid);
-			/* wait */
 			wait(NULL);
 		}
 	}
 	free(line);
+
 	return (0);
 }

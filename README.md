@@ -46,7 +46,6 @@ Write a program that executes the command ls -l /tmp in 5 different child proces
 #### 2. super simple shell
 
 Using everything we saw, write a first version of a super simple shell that can run commands with their full path, without any argument.
-
 10. [fork wait exec](./refresher/10_supersimpleshell.c) => creating a super simple shell that lists files
 
 ### File information
@@ -131,3 +130,43 @@ Write a function that deletes the variable name from the environment (without us
 Prototype: `int _unsetenv(const char *name);`
 
 20. [unsetenv](./refresher/20_unsetenv.c) => recreation of unsetenv
+
+## Project
+
+## Usage/Examples
+
+compilation
+
+```
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+```
+
+usage 1
+
+```
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+```
+
+usage 2
+
+```
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+```
+
+## Authors
+
+- Elvis Wangari: [Twitter](https://www.x.com/elvis_wangari), [Linkedin](www.linkedin.com/in/elvis-wangari)

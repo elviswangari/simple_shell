@@ -1,2 +1,11 @@
 #!/bin/bash
+
+# Run Betty on source files
 betty main.h *.c
+
+# Compile the program
+if gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh; then
+    ./hsh
+else
+    echo "Compilation failed. Exiting..."
+fi
