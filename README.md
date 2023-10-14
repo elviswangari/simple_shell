@@ -120,3 +120,13 @@ Write a function that changes or adds an environment variable (without using set
 Prototype: `int _setenv(const char *name, const char *value, int overwrite);`
 
 19. [setenv](./refresher/19_setenv.c) => recreation of setenv
+
+### unsetenv
+
+unsetenv is a function used to remove an environment valiable which only takes in the environment variable as an argument and returns 0 on success or -1 on failure
+
+Write a function that deletes the variable name from the environment (without using unsetenv).
+
+Prototype: `int _unsetenv(const char *name);`
+
+20. [unsetenv](./refresher/20_unsetenv.c) => recreation of unsetenv
