@@ -11,7 +11,7 @@ char *read_line(void)
 	char *token;
 
 	/* prompt and read line */
-	printf("#cisfun$ ");
+	write(STDOUT_FILENO, "#cisfun$ ", 9);
 	read_buff = getline(&line, &len, stdin);
 
 	if (read_buff == -1)
