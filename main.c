@@ -8,6 +8,11 @@ int main(void)
 	while (1)
 	{
 		char *line = read_line();
+		
+		if (line == NULL)
+		{
+			continue;
+		}
 
 		execute(line);
 	}
