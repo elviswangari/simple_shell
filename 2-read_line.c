@@ -7,7 +7,6 @@ char *read_line(void)
 {
 	char *line = NULL;
 	size_t len = 0;
-	int i;
 	ssize_t read_buff;
 	char *token;
 
@@ -22,10 +21,6 @@ char *read_line(void)
 	}
 
 	/* tockenize */
-	for (i = 0; i < 2; i++)
-	{
-		token = strtok(line, " \t\n");
-	}
-	printf("%s", token);
+	token = strtok(line, "\t\n");
 	return (token);
 }
