@@ -7,26 +7,9 @@ int main(void)
 {
 	while (1)
 	{
-		char *line = read_input();
-		char *token = strtok(line, " \t\n");
+		char *line = read_line();
 
-		display_prompt();
-
-		/**
-		 * if (strcmp(line, "exit") == 0 || strcmp(line, "quit") == 0)
-		{
-			free(line);
-			exit(EXIT_SUCCESS);
-		}
-		*/
-
-		if (token != NULL)
-		{
-			execute_command(token);
-		}
-
-		free(line);
+		execute(line);
 	}
-
-	return (EXIT_SUCCESS);
+	return (0);
 }

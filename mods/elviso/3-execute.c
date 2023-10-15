@@ -1,19 +1,19 @@
 #include "main.h"
 /**
- * execute - executes commands
- * @token: the command to be executed
+ * execute_command - program starts here
+ * @command: the command to be executed
  */
-void execute(char *token)
+void execute_command(char *command)
 {
-	pid_t child_pid;
+	pid_t child_pid = fork();
+	int status;
 
-	/* fork and execute */
-	child_pid = fork();
 	if (child_pid == -1)
 	{
 		perror("fork failed");
 		exit(EXIT_FAILURE);
 	}
+
 	if (child_pid == 0)
 	{
 		char **args = malloc(2 * sizeof(char *));
@@ -24,17 +24,15 @@ void execute(char *token)
 			exit(EXIT_FAILURE);
 		}
 
-		args[0] = token;
+		args[0] = command;
 		args[1] = NULL;
 
 		execve(args[0], args, NULL);
-
-		perror("./shell");
-		free(args);
+		perror("execve");
 		_exit(EXIT_FAILURE);
 	}
 	else
 	{
-		wait(NULL);
+		waitpid(child_pid, &status, 0);
 	}
 }

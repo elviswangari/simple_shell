@@ -9,8 +9,7 @@
 #include <sys/wait.h>
 
 int test_betty(void);
-void display_prompt(void);
-char *read_input(void);
-void execute_command(char *command);
+char *read_line(void);
+void execute(char *command);
 
 #endif /*MAIN_H*/
