@@ -16,21 +16,15 @@ void execute(char *token)
 	}
 	if (child_pid == 0)
 	{
-		char **args = malloc(2 * sizeof(char *));
-
-		if (args == NULL)
-		{
-			perror("malloc failed");
-			exit(EXIT_FAILURE);
-		}
+		char *args[2];
 
 		args[0] = token;
 		args[1] = NULL;
 
 		execve(args[0], args, NULL);
 
+		/* execve failed, command not found */
 		perror("./shell");
-		free(args);
 		_exit(EXIT_FAILURE);
 	}
 	else

@@ -14,7 +14,12 @@ char *read_line(void)
 	write(STDOUT_FILENO, "#cisfun$ ", 9);
 	read_buff = getline(&line, &len, stdin);
 
-	if (read_buff == -1)
+	if (read_buff == 0)
+	{
+		/* Handle end of file (Ctrl+D) */
+		exit(EXIT_SUCCESS);
+	}
+	else if (read_buff == -1)
 	{
 		free(line);
 		exit(EXIT_FAILURE);
