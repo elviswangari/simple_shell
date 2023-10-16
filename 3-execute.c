@@ -24,7 +24,7 @@ void execute(char *token)
 		execve(args[0], args, NULL);
 
 		/* execve failed, command not found */
-		perror("./shell");
+		perror("");
 		_exit(EXIT_FAILURE);
 	}
 	else

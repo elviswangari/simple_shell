@@ -11,19 +11,23 @@ char *read_line(void)
 	char *token;
 
 	/* prompt and read line */
-	write(STDOUT_FILENO, "#cisfun$ ", 9);
+	write(STDOUT_FILENO, "($) ", 4);
 	read_buff = getline(&line, &len, stdin);
 
-	/*if (read_buff == 0)
-	{
-		 Handle end of file (Ctrl+D)
-		exit(EXIT_SUCCESS);
-	}
-	else */
 	if (read_buff == -1)
 	{
-		free(line);
-		exit(EXIT_FAILURE);
+		if (feof(stdin))
+		{
+			/* Handle end of file (Ctrl+D) */
+			write(STDOUT_FILENO, "\n", 1);
+			exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			perror("getline failed");
+			free(line);
+			exit(EXIT_FAILURE);
+		}
 	}
 
 	/* tockenize */
