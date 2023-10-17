@@ -7,6 +7,8 @@ void execute(char *token)
 {
 	pid_t child_pid;
 
+	char *program = __FILE__;
+
 	/* fork and execute */
 	child_pid = fork();
 	if (child_pid == -1)
@@ -24,7 +26,7 @@ void execute(char *token)
 		execve(args[0], args, NULL);
 
 		/* execve failed, command not found */
-		perror("");
+		perror(program);
 		_exit(EXIT_FAILURE);
 	}
 	else
